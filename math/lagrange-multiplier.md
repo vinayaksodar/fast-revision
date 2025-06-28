@@ -49,7 +49,7 @@ $$
 \nabla f = \lambda \nabla g, \quad g(x, y) = 0
 $$
 
-### Compute the gradients:
+### Compute the gradients
 
 $$
 \nabla f = \left\langle y, x \right\rangle, \quad \nabla g = \left\langle \frac{x}{4}, y \right\rangle
@@ -120,14 +120,14 @@ $$
 
 ---
 
-###  Final Answer:
+### Final Answer
 
 * **Maximum**: $f = 2$ at $(2, 1)$ and $(-2, -1)$
 * **Minimum**: $f = -2$ at $(2, -1)$ and $(-2, 1)$
 
 ---
 
-###  **Quick Reminder**:
+### **Quick Reminder**
 
 > When using Lagrange multipliers:
 >
