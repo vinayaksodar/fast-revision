@@ -161,3 +161,7 @@ as the sequence length increases and the encoder is optimized (e.g. via arithmet
 **Longer sequences + better encoding** →  
 **Average bits per symbol → entropy**,  
 **Per-symbol cost → ideal −log₂(p)**
+
+## Reference
+
+[mit 6.004(read this)](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c1/c1s1/#5)
