@@ -43,6 +43,5 @@ The correct interpretation is this:
 
 This is what a 95% confidence interval really means.
 
----
-
-Let me know if you'd like a version with visuals or analogies too.
+## References
+1. Chapter 15 in INTRODUCTION TO COMPUTATION AND PROGRAMMING USING PYTHON by John Guttag
