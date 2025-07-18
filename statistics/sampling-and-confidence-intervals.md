@@ -1,13 +1,15 @@
 # Sampling and confidece intervals
+
 Let us get some fundamentals that you face in reality first
+
 - You don't know the population characterstics (mean, std etc.)
 - You have only ONE sample/dataset not many
 - Breaking up the sample and resampling will not reveal anything extra about the true population it will only give you the estimates of the characterstics of the sample which you already know.
 
-
 We want the population mean but we can't just give the sample mean and be done with it, how to put some confidence intervals around it.
 
 Suppose we could make infinite number of samples of size n from the real population then we have the Central limit theorem that says
+
 - Given a set of sufficiently large samples drawn from the same population, the
 means of the samples (the sample means) will be approximately normally distributed
 - This normal distribution will have a mean close to the mean of the population
@@ -18,18 +20,17 @@ But unfortunately we can't make multiple samples we have only one sample/dataset
 The SE for a sample of size n is the standard deviation of the means of an infinite number of samples of size n drawn from the same population. Unsurprisingly, it depends upon both n and σ, the standard deviation of the population:
 $$ 𝑆𝐸 = \frac{\sigma}{\sqrt n} $$
 
+If we don't have population standard deviation we use sample standard deviation instead to approximate it.
 
 ![Standard error of infinte samples](image-1.png)
-
 
 Suppose we want to reject something at the 95% confidence level what does that mean?
 
 Looking at the below figure only 5% of the sample means with a 2 SE interval don't include the population mean
 
-![alt text](image-2.png)
+![Confidence interval of a sample](image-2.png)
 
-Now we only have one sample 
-
+Now we only have one sample
 
 We take one sample and calculate its mean and standard error (SE). Using that, we build a confidence interval around the sample mean.
 
@@ -44,4 +45,5 @@ The correct interpretation is this:
 This is what a 95% confidence interval really means.
 
 ## References
+
 1. Chapter 15 in INTRODUCTION TO COMPUTATION AND PROGRAMMING USING PYTHON by John Guttag
