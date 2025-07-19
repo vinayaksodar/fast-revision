@@ -44,6 +44,35 @@ The correct interpretation is this:
 
 This is what a 95% confidence interval really means.
 
+## Comparing two distributions
+
+- When sampling from two **different populations** (e.g., `μ₁ = 119.5`, `μ₂ = 120`), the **null hypothesis (H₀: μ₁ = μ₂)** is **false**.
+
+- If we repeatedly sample and perform a **t-test**, we may still get **p < 0.05 only \~11.6%** of the time (not 5%), because:
+
+  > ⚠️ **The 5% significance level (α)** controls the **false positive rate when H₀ is true**, **not** the detection rate when H₀ is false.
+
+- The chance of correctly rejecting a false H₀ is called **power**. Low power means few small p-values, even when H₀ is false.
+
+### t-test construction
+
+- From samples of size `n₁`, `n₂`, we compute:
+
+$$
+t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+$$
+
+- `s₁`, `s₂` = **sample standard deviations** (not population std devs)
+- We use t test as real population std devs are unknown.
+
+- This `t` is compared to the standard **t-distribution** (with estimated degrees of freedom) to get a **p-value**.
+
+### Key Insight
+
+> Even if populations differ, small sample sizes or high variability can lead to high p-values — not because H₀ is true, but because the **test isn't powerful enough** to detect the difference.
+
+---
+
 ## References
 
 1. Chapter 15 in INTRODUCTION TO COMPUTATION AND PROGRAMMING USING PYTHON by John Guttag
