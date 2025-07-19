@@ -18,7 +18,13 @@ It returns a p-value of 0, indicating that if the coin is fair the probability o
 
 We should be wary of using a **one-tailed test** when the direction of the effect isn't pre-specified or when deviations in **either direction** would be meaningful.
 
-For example, in a study where Lyndsay wins **666 out of 1,273 games** of *Words with Friends* against John, John tests the null hypothesis that each player has a 50% chance of winning using a **two-tailed t-test**, which yields a **p-value of \~0.098**, indicating the result is **not statistically significant** at the 5% level. However, Lyndsay runs a **Monte Carlo simulation** assuming that only her winning more than 666 games would be surprising (a **one-tailed test**), and gets a **p-value of \~0.049**, which falsely appears significant. This result is misleading because it ignores the possibility that **John could have won 666 games**, which would also be surprising under the null. When the simulation is correctly adjusted to check for **either player** winning at least 666 games (a **two-tailed approach**), the p-value again rises to \~0.098 — matching the original t-test. This illustrates that using a one-tailed test **after seeing** that Lyndsay won more games biases the result and artificially inflates significance.
+For example, in a study where Lyndsay wins **666 out of 1,273 games** of *Words with Friends* against John, John tests the null hypothesis that each player has a 50% chance of winning using a **two-tailed t-test**, which yields a **p-value of \~0.098**, indicating the result is **not statistically significant** at the 5% level. However, Lyndsay runs a **Monte Carlo simulation** assuming that only her winning more than 666 games would be surprising (a **one-tailed test**), and gets a **p-value of \~0.049**, which falsely appears significant.
+
+This result is misleading because it ignores the possibility that **John could have won 666 games**, which would also be surprising under the null.
+
+The correct null hypothesis here is what is the possibility that any player will win 666 games.
+
+When the simulation is correctly adjusted to check for **either player** winning at least 666 games (a **two-tailed approach**), the p-value again rises to \~0.098 — matching the original t-test. This illustrates that using a one-tailed test **after seeing** that Lyndsay won more games biases the result and artificially inflates significance.
 
 ## Understanding the Texas Sharpshooter Fallacy
 
