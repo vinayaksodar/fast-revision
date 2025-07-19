@@ -14,6 +14,12 @@ stats.ttest_1samp([1, 1], 0.5)[1]
 
 It returns a p-value of 0, indicating that if the coin is fair the probability of getting two consecutive heads is nil.
 
+## One tail vs two tail test
+
+We should be wary of using a **one-tailed test** when the direction of the effect isn't pre-specified or when deviations in **either direction** would be meaningful.
+
+For example, in a study where Lyndsay wins **666 out of 1,273 games** of *Words with Friends* against John, John tests the null hypothesis that each player has a 50% chance of winning using a **two-tailed t-test**, which yields a **p-value of \~0.098**, indicating the result is **not statistically significant** at the 5% level. However, Lyndsay runs a **Monte Carlo simulation** assuming that only her winning more than 666 games would be surprising (a **one-tailed test**), and gets a **p-value of \~0.049**, which falsely appears significant. This result is misleading because it ignores the possibility that **John could have won 666 games**, which would also be surprising under the null. When the simulation is correctly adjusted to check for **either player** winning at least 666 games (a **two-tailed approach**), the p-value again rises to \~0.098 — matching the original t-test. This illustrates that using a one-tailed test **after seeing** that Lyndsay won more games biases the result and artificially inflates significance.
+
 ## Understanding the Texas Sharpshooter Fallacy
 
 In a 2001 study from the Royal Cornhill Hospital in Aberdeen, researchers reported that **30% more anorexic women were born in June** than the monthly average. With 446 anorexic women studied, the average births per month is \~37. A 30% increase implies **48 women were born in June**.
@@ -21,10 +27,10 @@ In a 2001 study from the Royal Cornhill Hospital in Aberdeen, researchers report
 They estimated the probability of this occurring **by chance** using a simulation, which gave:
 
 ```
-Probability of at least 48 births in June = 0.0427
+    Probability of at least 48 births in June = 0.0427
 ```
 
-This appears statistically significant (_p_ < 0.05) **if** June was the pre-specified hypothesis.
+This appears statistically significant (*p* < 0.05) **if** June was the pre-specified hypothesis.
 
 However, **the researchers did not hypothesize about June in advance**. They looked at all months and highlighted June **after seeing the data**. This is an example of the **Texas Sharpshooter Fallacy** — finding patterns after the fact and treating them as meaningful.
 
@@ -46,8 +52,8 @@ This shows the result is **not statistically unusual** when accounting for **mul
 
 | Hypothesis                                            | Interpretation                                                      |
 | ----------------------------------------------------- | ------------------------------------------------------------------- |
-| **H1: More anorexics are born in June**               | A specific, **pre-planned** test. _p_ ≈ 0.043 might be significant. |
-| **H2: Some month has unusually high anorexic births** | A **general, post-hoc** test. _p_ ≈ 0.44 is **not** significant.    |
+| **H1: More anorexics are born in June**               | A specific, **pre-planned** test. *p* ≈ 0.043 might be significant. |
+| **H2: Some month has unusually high anorexic births** | A **general, post-hoc** test. *p* ≈ 0.44 is **not** significant.    |
 
 ### Bonferroni Correction
 
@@ -56,7 +62,7 @@ If all 12 months were tested, a Bonferroni correction would adjust the significa
 - Original α = 0.05
 - Adjusted α = 0.05 / 12 ≈ 0.0042
 
-Since _p_ = 0.043 > 0.0042, the result would **not be significant** after correction.
+Since *p* = 0.043 > 0.0042, the result would **not be significant** after correction.
 
 ## Reference
 
